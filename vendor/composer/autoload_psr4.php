@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
+    'Parse\\' => array($vendorDir . '/parse/php-sdk/src/Parse'),
     'Instagram\\' => array($baseDir . '/src'),
     'Curl\\' => array($vendorDir . '/php-curl-class/php-curl-class/src/Curl'),
 );

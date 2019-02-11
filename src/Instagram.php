@@ -461,6 +461,7 @@ class Instagram {
         if(!$response->isOk()){
 
             if($response->isCheckpointRequired()){
+                echo 'Checkpoint required';
                 /*$this->sendVerificationCode($response->getCheckpointUrl());*/
                 /*throw new InstagramException(sprintf("Login Failed: [%s] %s\nGo to this URL in your web browser to continue:\n%s", $response->getStatus(), $response->getMessage(), $response->getCheckpointUrl()));*/
                 return array("code" => 201, "url" => $response->getCheckpointUrl());
@@ -469,6 +470,9 @@ class Instagram {
             throw new InstagramException(sprintf("Login Failed: [%s] %s", $response->getStatus(), $response->getMessage()));
 
         }
+
+        echo 'User logged in!';
+
 
         $this->setLoggedInUser($response->getLoggedInUser());
 

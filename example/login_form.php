@@ -18,7 +18,7 @@ $url =  reconstruct_url($_SERVER['REQUEST_URI']);
 <h3 style="color: red;"><?php if(isset($_GET['error'])){ echo $_GET['error']; } ?></h3>
 
 
-<form action="<?=$url?>/login.php" method="post">
+<form action="http://localhost:8030/login.php" method="post">
   Username or Email:<br>
   <input type="text" name="username" >
   <br>
