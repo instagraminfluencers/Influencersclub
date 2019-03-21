@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4db74b56-0b92-473f-a9e9-cb8af214d8ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/api/signup.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/api/verifyCode.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/example/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Instagram.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instagram.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ParseManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParseManager.php" afterDir="false" />
-    </list>
+    <list default="true" id="4db74b56-0b92-473f-a9e9-cb8af214d8ee" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,12 +265,12 @@
       <workItem from="1549821027928" duration="3055000" />
       <workItem from="1549873161802" duration="6738000" />
       <workItem from="1552411238720" duration="670000" />
-      <workItem from="1553172041280" duration="7672000" />
+      <workItem from="1553172041280" duration="8607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25704000" />
+    <option name="totallyTimeSpent" value="26639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="832" extended-state="6" />
