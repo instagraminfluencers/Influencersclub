@@ -2,65 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4db74b56-0b92-473f-a9e9-cb8af214d8ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ParseManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/api/signup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/api/verifyCode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/example/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/example/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/login_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/example/login_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/verification.php" beforeDir="false" afterPath="$PROJECT_DIR$/example/verification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/verification_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/example/verification_form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Instagram.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instagram.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/byte_safe_strings.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/cast_to_int.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/error_polyfill.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_com_dotnet.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_dev_urandom.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_libsodium.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_libsodium_legacy.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_mcrypt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_int.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/psalm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/psalm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/docs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/docs/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/docs/_static/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/docs/conf.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/docs/index.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Codec/CodecInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Codec/CodecInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Codec/GuidStringCodec.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Codec/GuidStringCodec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Codec/OrderedTimeCodec.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Codec/OrderedTimeCodec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Codec/StringCodec.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Codec/StringCodec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Codec/TimestampFirstCombCodec.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Codec/TimestampFirstCombCodec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Converter/NumberConverterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Converter/NumberConverterInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Converter/Time/DegradedTimeConverter.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Converter/Time/DegradedTimeConverter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Converter/TimeConverterInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Converter/TimeConverterInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/DegradedUuid.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/DegradedUuid.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Generator/CombGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Generator/CombGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Generator/DefaultTimeGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Generator/RandomBytesGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Generator/RandomGeneratorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Generator/RandomGeneratorInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Generator/TimeGeneratorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Generator/TimeGeneratorInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Provider/Node/FallbackNodeProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Provider/Node/FallbackNodeProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Provider/Node/RandomNodeProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Provider/Node/RandomNodeProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Provider/Node/SystemNodeProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Provider/Node/SystemNodeProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Provider/NodeProviderInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Provider/NodeProviderInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Uuid.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/Uuid.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/UuidFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/UuidFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/UuidFactoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/UuidFactoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/ramsey/uuid/src/UuidInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/ramsey/uuid/src/UuidInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ParseManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParseManager.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+            <state relative-caret-position="302">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="e#114#139#0#PHP" expanded="true" />
               </folding>
@@ -88,8 +36,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/parse/php-sdk/src/Parse/ParseQuery.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="466" column="20" selection-start-line="466" selection-start-column="20" selection-end-line="466" selection-end-column="20" />
+            <state relative-caret-position="554">
+              <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/api/signup.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1215">
+              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+              <folding>
+                <element signature="e#182#210#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Instagram.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="1529" column="20" selection-start-line="1529" selection-start-column="20" selection-end-line="1529" selection-end-column="20" />
+            <state relative-caret-position="275">
+              <caret line="1601" column="20" selection-start-line="1601" selection-start-column="20" selection-end-line="1601" selection-end-column="20" />
               <folding>
                 <element signature="e#29#43#0#PHP" expanded="true" />
               </folding>
@@ -106,55 +66,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/verification_form.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/example/api/verifyCode.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/index.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ParseManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="83">
+              <caret line="81" column="48" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="48" />
               <folding>
-                <element signature="e#112#134#0#PHP" expanded="true" />
+                <element signature="e#429#454#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/login_form.php">
+        <entry file="file://$PROJECT_DIR$/example/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+            <state relative-caret-position="75">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/verification.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+            <state relative-caret-position="221">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding>
                 <element signature="e#114#139#0#PHP" expanded="true" />
               </folding>
@@ -163,10 +105,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/parse/php-sdk/src/Parse/ParseUser.php">
+        <entry file="file://$PROJECT_DIR$/src/API/Constants.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="520" selection-start-line="520" selection-end-line="520" />
+            <state relative-caret-position="570">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -181,6 +128,14 @@
       <find>method_obj</find>
       <find>init</find>
       <find>$_POST</find>
+      <find>ParseManager</find>
+      <find>getClient</find>
+      <find>$session</find>
+      <find>saveNewClient</find>
+      <find>ConfirmVerificationCode</find>
+      <find>Check</find>
+      <find>Random?</find>
+      <find>$parseManager</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -190,16 +145,21 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/example/login_form.php" />
-        <option value="$PROJECT_DIR$/src/Instagram.php" />
         <option value="$PROJECT_DIR$/composer.lock" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/example/verification_form.php" />
-        <option value="$PROJECT_DIR$/src/ParseManager.php" />
-        <option value="$PROJECT_DIR$/example/login.php" />
         <option value="$PROJECT_DIR$/example/verification.php" />
+        <option value="$PROJECT_DIR$/example/signup.php" />
+        <option value="$PROJECT_DIR$/api/signup.php" />
+        <option value="$PROJECT_DIR$/src/ParseManager.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/example/login.php" />
+        <option value="$PROJECT_DIR$/src/Instagram.php" />
+        <option value="$PROJECT_DIR$/example/api/signup.php" />
+        <option value="$PROJECT_DIR$/example/api/verifyCode.php" />
       </list>
     </option>
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/netresearch/jsonmapper" />
@@ -212,10 +172,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1440" />
-    <option name="y" value="-157" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="832" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -239,18 +198,24 @@
             <path>
               <item name="php-instagram-private-api-with-checkpoint-feature" type="b2602c69:ProjectViewProjectNode" />
               <item name="php-instagram-private-api-with-checkpoint-feature" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="php-instagram-private-api-with-checkpoint-feature" type="b2602c69:ProjectViewProjectNode" />
+              <item name="php-instagram-private-api-with-checkpoint-feature" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="php-instagram-private-api-with-checkpoint-feature" type="b2602c69:ProjectViewProjectNode" />
               <item name="php-instagram-private-api-with-checkpoint-feature" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="php-instagram-private-api-with-checkpoint-feature" type="b2602c69:ProjectViewProjectNode" />
               <item name="php-instagram-private-api-with-checkpoint-feature" type="462c0819:PsiDirectoryNode" />
               <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="composer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -263,6 +228,16 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/API" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/example" />
+      <recent name="$PROJECT_DIR$/api" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -296,31 +271,32 @@
       <workItem from="1549790052969" duration="1645000" />
       <workItem from="1549814507920" duration="730000" />
       <workItem from="1549821027928" duration="3055000" />
-      <workItem from="1549873161802" duration="6260000" />
+      <workItem from="1549873161802" duration="6738000" />
+      <workItem from="1552411238720" duration="670000" />
+      <workItem from="1553172041280" duration="7672000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16884000" />
+    <option name="totallyTimeSpent" value="25704000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-157" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="832" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1970181" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27181688" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25181347" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5540541" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.42972973" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32972974" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.55945945" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -331,6 +307,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/example/api/verifyCode.php</url>
+          <line>176</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/superglobals/_superglobals.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -339,48 +326,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="409" column="14" lean-forward="true" selection-start-line="409" selection-start-column="14" selection-end-line="409" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Util/CustomJsonMapper.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/API/DeviceConstants.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/API/Constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/API/Framework/Request.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -405,40 +352,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ParseManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#112#134#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/parse/php-sdk/src/Parse/ParseUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="520" selection-start-line="520" selection-end-line="520" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/parse/php-sdk/src/Parse/ParseQuery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="466" column="20" selection-start-line="466" selection-start-column="20" selection-end-line="466" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/verification_form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -446,39 +359,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instagram.php">
+    <entry file="file://$PROJECT_DIR$/vendor/parse/php-sdk/src/Parse/ParseUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="1529" column="20" selection-start-line="1529" selection-start-column="20" selection-end-line="1529" selection-end-column="20" />
-          <folding>
-            <element signature="e#29#43#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="7770">
+          <caret line="520" selection-start-line="520" selection-end-line="520" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Util/CustomJsonMapper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4074">
+          <caret line="350" selection-start-line="350" selection-end-line="350" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/login_form.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/session/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="178" column="9" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ParseManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="e#112#134#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/API/signup.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/API/Constants.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+        <state relative-caret-position="302">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="e#114#139#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/parse/php-sdk/src/Parse/ParseQuery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="78" column="20" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example/verification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+        <state relative-caret-position="221">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding>
             <element signature="e#114#139#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Instagram.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="1601" column="20" selection-start-line="1601" selection-start-column="20" selection-end-line="1601" selection-end-column="20" />
+          <folding>
+            <element signature="e#29#43#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/api/signup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+          <folding>
+            <element signature="e#182#210#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/api/verifyCode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="81" column="48" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="48" />
+          <folding>
+            <element signature="e#429#454#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

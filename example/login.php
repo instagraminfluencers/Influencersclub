@@ -13,13 +13,6 @@ use Parse\ParseObject;
 
 $url_redirect = dirname($_SERVER['REQUEST_URI']);
 
-class ParseManager
-{
-    public $proxy = null;
-
-}
-
-$parseManager = new ParseManager();
 
 function saveNewClient($username, $password, $url, $proxy)
 {
@@ -30,6 +23,7 @@ function saveNewClient($username, $password, $url, $proxy)
     $clientObject->set("verificationUrl", $url);
     $clientObject->set("isVerified", false);
     $clientObject->set("proxy", $proxy);
+    //$clientObject->set("session", $session);
 
     try {
         $clientObject->save();
@@ -105,9 +99,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
             $response = $instagram->sendVerificationCode($response['url'], $method->value);
 
+            $insta = $instagram->saveSession();
+
             saveNewClient($clientUsername, $clientPassword, $url, $proxy);
 
-            $insta = $instagram->saveSession();
 
             include("verification_form.php");
 

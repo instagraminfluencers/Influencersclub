@@ -32,6 +32,7 @@
     "php-curl-class/php-curl-class": "^4.11",
     "netresearch/jsonmapper": "^0.11.0",
     "ramsey/uuid": "^3.4",
-    "parse/php-sdk" : "1.4.*"
+    "parse/php-sdk": "1.4.*",
+    "ext-json": "*"
   }
 }

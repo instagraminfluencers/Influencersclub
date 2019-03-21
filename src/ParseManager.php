@@ -15,6 +15,7 @@ use Parse\ParseQuery;
 class ParseManager
 {
 
+
     private $isConfigured = false;
 
     public function initParseManager()

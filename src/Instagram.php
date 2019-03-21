@@ -52,7 +52,8 @@ use Instagram\API\Response\Model\Location;
 use Instagram\API\Response\Model\User;
 use Ramsey\Uuid\Uuid;
 
-class Instagram {
+class Instagram
+{
 
     /**
      *
@@ -144,7 +145,8 @@ class Instagram {
      */
     public $verifyPeer = true;
 
-    public function __construct(){
+    public function __construct()
+    {
 
         //Set your Timezone
         date_default_timezone_set(Constants::TIMEZONE);
@@ -159,11 +161,12 @@ class Instagram {
      * @see Instagram::saveSession()
      * @throws InstagramException
      */
-    public function initFromSavedSession($session){
+    public function initFromSavedSession($session)
+    {
 
         $session = json_decode($session, true);
 
-        if(!$session){
+        if (!$session) {
             throw new InstagramException("Failed to deserialize Saved Session!");
         }
 
@@ -186,7 +189,8 @@ class Instagram {
      * @see Instagram::initFromSavedSession()
      * @return string Instagram session as JSON string
      */
-    public function saveSession(){
+    public function saveSession()
+    {
 
         $session = array(
             "loggedInUser" => $this->getLoggedInUser(),
@@ -207,39 +211,44 @@ class Instagram {
     /**
      * @return User
      */
-    public function getLoggedInUser(){
+    public function getLoggedInUser()
+    {
         return $this->loggedInUser;
     }
 
     /**
      * @return array
      */
-    public function getCookies(){
+    public function getCookies()
+    {
         return is_array($this->cookies) ? $this->cookies : array();
     }
 
     /**
      * @return string
      */
-    public function getCSRFToken(){
+    public function getCSRFToken()
+    {
         return $this->csrfToken;
     }
 
     /**
      * @return string
      */
-    public function getRankToken(){
+    public function getRankToken()
+    {
         return $this->rankToken;
     }
 
     /**
      * @return string
      */
-    public function getUserRankToken(){
+    public function getUserRankToken()
+    {
 
         $loggedInUser = $this->getLoggedInUser();
 
-        if($loggedInUser != null){
+        if ($loggedInUser != null) {
             return sprintf("%s_%s", $loggedInUser->getPk(), $this->rankToken);
         }
 
@@ -250,53 +259,60 @@ class Instagram {
     /**
      * @return string
      */
-    public function getPhoneId(){
+    public function getPhoneId()
+    {
         return $this->phoneId;
     }
 
     /**
      * @return string
      */
-    public function getDeviceId(){
+    public function getDeviceId()
+    {
         return $this->deviceId;
     }
 
     /**
      * @return string
      */
-    public function getGUID(){
+    public function getGUID()
+    {
         return $this->guid;
     }
 
     /**
      * @return string
      */
-    public function getUUID(){
+    public function getUUID()
+    {
         return $this->uuid;
     }
 
     /**
      * @return string
      */
-    public function getGoogleAdId(){
+    public function getGoogleAdId()
+    {
         return $this->googleAdId;
     }
 
     /**
      * @param API\Response\Model\User $loggedInUser
      */
-    public function setLoggedInUser($loggedInUser){
+    public function setLoggedInUser($loggedInUser)
+    {
         $this->loggedInUser = $loggedInUser;
     }
 
     /**
      * @param array $cookies
      */
-    public function setCookies($cookies){
+    public function setCookies($cookies)
+    {
 
         $this->cookies = $cookies;
 
-        if(array_key_exists("csrftoken", $cookies)){
+        if (array_key_exists("csrftoken", $cookies)) {
             $this->setCsrfToken($cookies["csrftoken"]);
         }
 
@@ -305,56 +321,64 @@ class Instagram {
     /**
      * @param string $csrfToken
      */
-    public function setCsrfToken($csrfToken){
+    public function setCsrfToken($csrfToken)
+    {
         $this->csrfToken = $csrfToken;
     }
 
     /**
      * @param string $rankToken
      */
-    public function setRankToken($rankToken){
+    public function setRankToken($rankToken)
+    {
         $this->rankToken = $rankToken;
     }
 
     /**
      * @param string $phoneId
      */
-    public function setPhoneId($phoneId){
+    public function setPhoneId($phoneId)
+    {
         $this->phoneId = $phoneId;
     }
 
     /**
      * @param string $deviceId
      */
-    public function setDeviceId($deviceId){
+    public function setDeviceId($deviceId)
+    {
         $this->deviceId = $deviceId;
     }
 
     /**
      * @param string $guid
      */
-    public function setGuid($guid){
+    public function setGuid($guid)
+    {
         $this->guid = $guid;
     }
 
     /**
      * @param string $uuid
      */
-    public function setUuid($uuid){
+    public function setUuid($uuid)
+    {
         $this->uuid = $uuid;
     }
 
     /**
      * @param string $googleAdId
      */
-    public function setGoogleAdId($googleAdId){
+    public function setGoogleAdId($googleAdId)
+    {
         $this->googleAdId = $googleAdId;
     }
 
     /**
      * @return bool
      */
-    public function isLoggedIn(){
+    public function isLoggedIn()
+    {
         return $this->getCookies() != null && $this->getLoggedInUser() != null;
     }
 
@@ -364,20 +388,21 @@ class Instagram {
      * @param string $username Proxy Username
      * @param string $password Proxy Password
      */
-    public function setProxy($proxy, $username = null, $password = null){
+    public function setProxy($proxy, $username = null, $password = null)
+    {
 
-        if(is_object($proxy)){
-          $this->proxy = $proxy->ip.":".$proxy->port;
+        if (is_object($proxy)) {
+            $this->proxy = $proxy->ip . ":" . $proxy->port;
 
-          if($proxy->username != null && $proxy->password != null){
-              $this->proxyCredentials = $proxy->username . ":" . $proxy->password;
-          }
+            if ($proxy->username != null && $proxy->password != null) {
+                $this->proxyCredentials = $proxy->username . ":" . $proxy->password;
+            }
 
-        }else{
-          $this->proxy = $proxy;
+        } else {
+            $this->proxy = $proxy;
         }
 
-        if($username != null && $password != null){
+        if ($username != null && $password != null) {
             $this->proxyCredentials = $username . ":" . $password;
         }
     }
@@ -386,7 +411,8 @@ class Instagram {
      * Get the HTTP Proxy to be used for Instagram API Requests
      * @return string
      */
-    public function getProxy(){
+    public function getProxy()
+    {
         return $this->proxy;
     }
 
@@ -394,7 +420,8 @@ class Instagram {
      * Get the HTTP Proxy Credentials to be used for Instagram API Requests
      * @return string
      */
-    public function getProxyCredentials(){
+    public function getProxyCredentials()
+    {
         return $this->proxyCredentials;
     }
 
@@ -402,7 +429,8 @@ class Instagram {
      * Enable/Disable SSL Verification of Peer
      * @param $verifyPeer boolean
      */
-    public function setVerifyPeer($verifyPeer){
+    public function setVerifyPeer($verifyPeer)
+    {
         $this->verifyPeer = $verifyPeer;
     }
 
@@ -410,7 +438,8 @@ class Instagram {
      * SSL Verification of Peer
      * @return string
      */
-    public function shouldVerifyPeer(){
+    public function shouldVerifyPeer()
+    {
         return $this->verifyPeer;
     }
 
@@ -418,15 +447,17 @@ class Instagram {
      * @param $seed
      * @return string
      */
-    public function generateDeviceId($seed){
+    public function generateDeviceId($seed)
+    {
         $volatile_seed = filemtime(__DIR__);
-        return sprintf("android-%s", substr(md5($seed.$volatile_seed), 16));
+        return sprintf("android-%s", substr(md5($seed . $volatile_seed), 16));
     }
 
     /**
      * Setup this instance with a fresh GUID, UUID and Phone ID.
      */
-    public function setupAsNewDevice(){
+    public function setupAsNewDevice()
+    {
 
         $guidId = Uuid::uuid4()->toString();
         $phoneId = Uuid::uuid4()->toString();
@@ -450,18 +481,19 @@ class Instagram {
      * @return API\Response\LoginResponse
      * @throws Exception
      */
-    public function login($username, $password){
+    public function login($username, $password)
+    {
 
         $this->setupAsNewDevice();
-        $this->setDeviceId($this->generateDeviceId(md5($username.$password)));
+        $this->setDeviceId($this->generateDeviceId(md5($username . $password)));
 
         $request = new LoginRequest($this, $username, $password);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
 
-            if($response->isCheckpointRequired()){
-                echo 'Checkpoint required';
+            if ($response->isCheckpointRequired()) {
+                //echo 'Checkpoint required';
                 /*$this->sendVerificationCode($response->getCheckpointUrl());*/
                 /*throw new InstagramException(sprintf("Login Failed: [%s] %s\nGo to this URL in your web browser to continue:\n%s", $response->getStatus(), $response->getMessage(), $response->getCheckpointUrl()));*/
                 return array("code" => 201, "url" => $response->getCheckpointUrl());
@@ -488,16 +520,17 @@ class Instagram {
      * @return API\Response\TimelineFeedResponse
      * @throws Exception
      */
-    public function getTimelineFeed($maxId = null){
+    public function getTimelineFeed($maxId = null)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getTimelineFeed().");
         }
 
         $request = new TimelineFeedRequest($this, $maxId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getTimelineFeed: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -514,20 +547,21 @@ class Instagram {
      * @return API\Response\UserFeedResponse
      * @throws Exception
      */
-    public function getUserFeed($userId, $maxId = null){
+    public function getUserFeed($userId, $maxId = null)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getUserFeed().");
         }
 
-        if($userId instanceof User){
+        if ($userId instanceof User) {
             $userId = $userId->getPk();
         }
 
         $request = new UserFeedRequest($this, $userId, $maxId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getUserFeed: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -543,7 +577,8 @@ class Instagram {
      * @return API\Response\UserFeedResponse
      * @throws Exception
      */
-    public function getMyUserFeed($maxId = null){
+    public function getMyUserFeed($maxId = null)
+    {
         return $this->getUserFeed($this->getLoggedInUser()->getPk(), $maxId);
     }
 
@@ -555,16 +590,17 @@ class Instagram {
      * @return API\Response\LikedFeedResponse
      * @throws Exception
      */
-    public function getLikedFeed($maxId = null){
+    public function getLikedFeed($maxId = null)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getLikedFeed().");
         }
 
         $request = new LikedFeedRequest($this, $maxId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getLikedFeed: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -581,16 +617,17 @@ class Instagram {
      * @return API\Response\TagFeedResponse
      * @throws Exception
      */
-    public function getTagFeed($tag, $maxId = null){
+    public function getTagFeed($tag, $maxId = null)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getTagFeed().");
         }
 
         $request = new TagFeedRequest($this, $tag, $maxId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getTagFeed: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -607,20 +644,21 @@ class Instagram {
      * @return API\Response\LocationFeedResponse
      * @throws Exception
      */
-    public function getLocationFeed($locationId, $maxId = null){
+    public function getLocationFeed($locationId, $maxId = null)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getLocationFeed().");
         }
 
-        if($locationId instanceof Location){
+        if ($locationId instanceof Location) {
             $locationId = $locationId->getPk();
         }
 
         $request = new LocationFeedRequest($this, $locationId, $maxId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getLocationFeed: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -637,20 +675,21 @@ class Instagram {
      * @return API\Response\UserTagsFeedResponse
      * @throws Exception
      */
-    public function getUserTagsFeed($userId, $maxId = null){
+    public function getUserTagsFeed($userId, $maxId = null)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getUserTagsFeed().");
         }
 
-        if($userId instanceof User){
+        if ($userId instanceof User) {
             $userId = $userId->getPk();
         }
 
         $request = new UserTagsFeedRequest($this, $userId, $maxId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getUserTagsFeed: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -666,20 +705,21 @@ class Instagram {
      * @return API\Response\LikeMediaResponse
      * @throws Exception
      */
-    public function likeMedia($mediaId){
+    public function likeMedia($mediaId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call likeMedia().");
         }
 
-        if($mediaId instanceof FeedItem){
+        if ($mediaId instanceof FeedItem) {
             $mediaId = $mediaId->getPk();
         }
 
         $request = new LikeMediaRequest($this, $mediaId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to likeMedia: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -695,20 +735,21 @@ class Instagram {
      * @return API\Response\UnlikeMediaResponse
      * @throws Exception
      */
-    public function unlikeMedia($mediaId){
+    public function unlikeMedia($mediaId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call likeMedia().");
         }
 
-        if($mediaId instanceof FeedItem){
+        if ($mediaId instanceof FeedItem) {
             $mediaId = $mediaId->getPk();
         }
 
         $request = new UnlikeMediaRequest($this, $mediaId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to unlikeMedia: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -725,20 +766,21 @@ class Instagram {
      * @return API\Response\DeleteMediaResponse
      * @throws Exception
      */
-    public function deleteMedia($mediaId, $mediaType){
+    public function deleteMedia($mediaId, $mediaType)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call deleteMedia().");
         }
 
-        if($mediaId instanceof FeedItem){
+        if ($mediaId instanceof FeedItem) {
             $mediaId = $mediaId->getPk();
         }
 
         $request = new DeleteMediaRequest($this, $mediaId, $mediaType);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to deleteMedia: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -755,20 +797,21 @@ class Instagram {
      * @return API\Response\CommentMediaResponse
      * @throws Exception
      */
-    public function commentOnMedia($mediaId, $comment){
+    public function commentOnMedia($mediaId, $comment)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call commentOnMedia().");
         }
 
-        if($mediaId instanceof FeedItem){
+        if ($mediaId instanceof FeedItem) {
             $mediaId = $mediaId->getPk();
         }
 
         $request = new CommentMediaRequest($this, $mediaId, $comment);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to commentOnMedia: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -785,20 +828,21 @@ class Instagram {
      * @return API\Response\CommentsMediaResponse
      * @throws Exception
      */
-    public function getMediaComments($mediaId, $maxId){
+    public function getMediaComments($mediaId, $maxId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getMediaComments().");
         }
 
-        if($mediaId instanceof FeedItem){
+        if ($mediaId instanceof FeedItem) {
             $mediaId = $mediaId->getPk();
         }
 
         $request = new CommentsMediaRequest($this, $mediaId, $maxId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getMediaComments: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -815,20 +859,21 @@ class Instagram {
      * @return API\Response\BulkDeleteCommentsMediaResponse
      * @throws Exception
      */
-    public function deleteCommentsFromMedia($mediaId, $commentIds){
+    public function deleteCommentsFromMedia($mediaId, $commentIds)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call deleteCommentsFromMedia().");
         }
 
-        if($mediaId instanceof FeedItem){
+        if ($mediaId instanceof FeedItem) {
             $mediaId = $mediaId->getPk();
         }
 
         $request = new BulkDeleteCommentsMediaRequest($this, $mediaId, $commentIds);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to deleteCommentsFromMedia: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -844,20 +889,21 @@ class Instagram {
      * @return API\Response\InfoUserResponse
      * @throws Exception
      */
-    public function getUserInfo($userId){
+    public function getUserInfo($userId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getUserInfo().");
         }
 
-        if($userId instanceof User){
+        if ($userId instanceof User) {
             $userId = $userId->getPk();
         }
 
         $request = new InfoUserRequest($this, $userId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getUserInfo: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -874,20 +920,21 @@ class Instagram {
      * @return API\Response\FollowersFriendshipResponse
      * @throws Exception
      */
-    public function getUserFollowers($userId, $maxId){
+    public function getUserFollowers($userId, $maxId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getUserFollowers().");
         }
 
-        if($userId instanceof User){
+        if ($userId instanceof User) {
             $userId = $userId->getPk();
         }
 
         $request = new FollowersFriendshipRequest($this, $userId, $maxId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getUserFollowers: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -904,20 +951,21 @@ class Instagram {
      * @return API\Response\FollowingFriendshipResponse
      * @throws Exception
      */
-    public function getUserFollowing($userId, $maxId){
+    public function getUserFollowing($userId, $maxId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getUserFollowing().");
         }
 
-        if($userId instanceof User){
+        if ($userId instanceof User) {
             $userId = $userId->getPk();
         }
 
         $request = new FollowingFriendshipRequest($this, $userId, $maxId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getUserFollowing: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -933,20 +981,21 @@ class Instagram {
      * @return API\Response\UserMapResponse
      * @throws Exception
      */
-    public function getUserMap($userId){
+    public function getUserMap($userId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getUserMap().");
         }
 
-        if($userId instanceof User){
+        if ($userId instanceof User) {
             $userId = $userId->getPk();
         }
 
         $request = new UserMapRequest($this, $userId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getUserMap: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -962,20 +1011,21 @@ class Instagram {
      * @return API\Response\InfoMediaResponse
      * @throws Exception
      */
-    public function getMediaInfo($mediaId){
+    public function getMediaInfo($mediaId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getMediaInfo().");
         }
 
-        if($mediaId instanceof FeedItem){
+        if ($mediaId instanceof FeedItem) {
             $mediaId = $mediaId->getPk();
         }
 
         $request = new InfoMediaRequest($this, $mediaId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getMediaInfo: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -990,16 +1040,17 @@ class Instagram {
      * @return API\Response\CurrentUserAccountResponse
      * @throws Exception
      */
-    public function getCurrentUserAccount(){
+    public function getCurrentUserAccount()
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call getCurrentUserAccount().");
         }
 
         $request = new CurrentUserAccountRequest($this);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to getCurrentUserAccount: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1020,42 +1071,43 @@ class Instagram {
      * @return API\Response\EditProfileAccountResponse
      * @throws Exception
      */
-    public function editUserProfile($firstname = null, $email = null, $phoneNumber = null, $gender = null, $biography = null, $externalUrl = null){
+    public function editUserProfile($firstname = null, $email = null, $phoneNumber = null, $gender = null, $biography = null, $externalUrl = null)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call editUserProfile().");
         }
 
         $currentUser = $this->getCurrentUserAccount()->getUser();
 
-        if($firstname == null){
+        if ($firstname == null) {
             $firstname = $currentUser->getFullName();
         }
 
-        if($email == null){
+        if ($email == null) {
             $email = $currentUser->getEmail();
         }
 
-        if($phoneNumber == null){
+        if ($phoneNumber == null) {
             $phoneNumber = $currentUser->getPhoneNumber();
         }
 
-        if($gender == null){
+        if ($gender == null) {
             $gender = $currentUser->getGender();
         }
 
-        if($biography == null){
+        if ($biography == null) {
             $biography = $currentUser->getBiography();
         }
 
-        if($externalUrl == null){
+        if ($externalUrl == null) {
             $externalUrl = $currentUser->getExternalUrl();
         }
 
         $request = new EditProfileAccountRequest($this, $firstname, $email, $phoneNumber, $gender, $biography, $externalUrl);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to editUserProfile: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1070,16 +1122,17 @@ class Instagram {
      * @return API\Response\SetPublicAccountResponse
      * @throws Exception
      */
-    public function setAccountPublic(){
+    public function setAccountPublic()
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call setAccountPublic().");
         }
 
         $request = new SetPublicAccountRequest($this);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to setAccountPublic: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1094,16 +1147,17 @@ class Instagram {
      * @return API\Response\SetPrivateAccountResponse
      * @throws Exception
      */
-    public function setAccountPrivate(){
+    public function setAccountPrivate()
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call setAccountPrivate().");
         }
 
         $request = new SetPrivateAccountRequest($this);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to setAccountPrivate: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1119,20 +1173,21 @@ class Instagram {
      * @return API\Response\ShowFriendshipResponse
      * @throws Exception
      */
-    public function showFriendship($userId){
+    public function showFriendship($userId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call showFriendship().");
         }
 
-        if($userId instanceof User){
+        if ($userId instanceof User) {
             $userId = $userId->getPk();
         }
 
         $request = new ShowFriendshipRequest($this, $userId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to showFriendship: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1148,20 +1203,21 @@ class Instagram {
      * @return API\Response\CreateFriendshipResponse
      * @throws Exception
      */
-    public function followUser($userId){
+    public function followUser($userId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call followUser().");
         }
 
-        if($userId instanceof User){
+        if ($userId instanceof User) {
             $userId = $userId->getPk();
         }
 
         $request = new CreateFriendshipRequest($this, $userId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to followUser: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1177,20 +1233,21 @@ class Instagram {
      * @return API\Response\DestroyFriendshipResponse
      * @throws Exception
      */
-    public function unfollowUser($userId){
+    public function unfollowUser($userId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call unfollowUser().");
         }
 
-        if($userId instanceof User){
+        if ($userId instanceof User) {
             $userId = $userId->getPk();
         }
 
         $request = new DestroyFriendshipRequest($this, $userId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to unfollowUser: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1206,20 +1263,21 @@ class Instagram {
      * @return API\Response\BlockFriendshipResponse
      * @throws Exception
      */
-    public function blockUser($userId){
+    public function blockUser($userId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call blockUser().");
         }
 
-        if($userId instanceof User){
+        if ($userId instanceof User) {
             $userId = $userId->getPk();
         }
 
         $request = new BlockFriendshipRequest($this, $userId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to blockUser: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1235,20 +1293,21 @@ class Instagram {
      * @return API\Response\UnblockFriendshipResponse
      * @throws Exception
      */
-    public function unblockUser($userId){
+    public function unblockUser($userId)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call unblockUser().");
         }
 
-        if($userId instanceof User){
+        if ($userId instanceof User) {
             $userId = $userId->getPk();
         }
 
         $request = new UnblockFriendshipRequest($this, $userId);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to unblockUser: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1264,16 +1323,17 @@ class Instagram {
      * @return API\Response\SearchTagsResponse
      * @throws Exception
      */
-    public function searchTags($query){
+    public function searchTags($query)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call searchTags().");
         }
 
         $request = new SearchTagsRequest($this, $query);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to searchTags: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1289,16 +1349,17 @@ class Instagram {
      * @return API\Response\SearchUsersResponse
      * @throws Exception
      */
-    public function searchUsers($query){
+    public function searchUsers($query)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call searchUsers().");
         }
 
         $request = new SearchUsersRequest($this, $query);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to searchUsers: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1314,9 +1375,10 @@ class Instagram {
      * @return API\Response\PlacesFacebookSearchResponse
      * @throws Exception
      */
-    public function searchFacebookPlaces($query){
+    public function searchFacebookPlaces($query)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call searchFacebookPlaces().");
         }
 
@@ -1324,7 +1386,7 @@ class Instagram {
         $request->searchByQuery($query);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to searchFacebookPlaces: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1341,9 +1403,10 @@ class Instagram {
      * @return API\Response\PlacesFacebookSearchResponse
      * @throws Exception
      */
-    public function searchFacebookPlacesByLocation($latitude, $longitude){
+    public function searchFacebookPlacesByLocation($latitude, $longitude)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call searchFacebookPlacesByLocation().");
         }
 
@@ -1351,7 +1414,7 @@ class Instagram {
         $request->searchByLocation($latitude, $longitude);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to searchFacebookPlacesByLocation: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1367,16 +1430,17 @@ class Instagram {
      * @return API\Response\ChangeProfilePictureAccountResponse
      * @throws Exception
      */
-    public function changeProfilePicture($path){
+    public function changeProfilePicture($path)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call changeProfilePicture().");
         }
 
         $request = new ChangeProfilePictureAccountRequest($this, $path);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to changeProfilePicture: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1391,16 +1455,17 @@ class Instagram {
      * @return API\Response\ChangeProfilePictureAccountResponse
      * @throws Exception
      */
-    public function removeProfilePicture(){
+    public function removeProfilePicture()
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call removeProfilePicture().");
         }
 
         $request = new RemoveProfilePictureAccountRequest($this);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to removeProfilePicture: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1417,23 +1482,24 @@ class Instagram {
      * @return API\Response\ConfigureMediaResponse
      * @throws Exception
      */
-    public function postPhoto($path, $caption = null){
+    public function postPhoto($path, $caption = null)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call postPhoto().");
         }
 
         $request = new PhotoUploadRequest($this, $path);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to Upload Photo: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
         $request = new ConfigureMediaRequest($this, $response->getUploadId(), $path, $caption);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to Configure Media: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1450,20 +1516,21 @@ class Instagram {
      * @return API\Response\EditMediaResponse
      * @throws Exception
      */
-    public function editMedia($mediaId, $caption = null){
+    public function editMedia($mediaId, $caption = null)
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call editMedia().");
         }
 
-        if($mediaId instanceof FeedItem){
+        if ($mediaId instanceof FeedItem) {
             $mediaId = $mediaId->getPk();
         }
 
         $request = new EditMediaRequest($this, $mediaId, $caption);
         $response = $request->execute();
 
-        if(!$response->isOk()){
+        if (!$response->isOk()) {
             throw new InstagramException(sprintf("Failed to editMedia: [%s] %s", $response->getStatus(), $response->getMessage()));
         }
 
@@ -1479,13 +1546,14 @@ class Instagram {
      * @return API\Response\Model\User
      * @throws Exception
      */
-    public function getUserByUsername($username){
+    public function getUserByUsername($username)
+    {
 
         $searchResults = $this->searchUsers($username);
         $users = $searchResults->getUsers();
 
-        foreach($users as $user){
-            if($username == $user->getUsername()){
+        foreach ($users as $user) {
+            if ($username == $user->getUsername()) {
                 return $user;
             }
         }
@@ -1501,9 +1569,10 @@ class Instagram {
      * @return API\Response\LogoutResponse
      * @throws Exception
      */
-    public function logout(){
+    public function logout()
+    {
 
-        if(!$this->isLoggedIn()){
+        if (!$this->isLoggedIn()) {
             throw new InstagramException("You must be logged in to call logout().");
         }
 
@@ -1512,35 +1581,41 @@ class Instagram {
 
     }
 
-    public function ChallengeCode($url){
-      $request = new ChallengeRequest($this, $url);
-      return $request->execute();
+    public function ChallengeCode($url)
+    {
+        $request = new ChallengeRequest($this, $url);
+        return $request->execute();
     }
 
-    public function GetChallengeMethods($url){
-      $request = new ChallengeMethods($this, $url);
-      return $request->execute();
+    public function GetChallengeMethods($url)
+    {
+        $request = new ChallengeMethods($this, $url);
+        return $request->execute();
     }
 
-    public function sendVerificationCode($url, $method){
-      $request = new Challenge_sendcode($this, $url, $method);
-      return $request->execute();
+    public function sendVerificationCode($url, $method)
+    {
+        $request = new Challenge_sendcode($this, $url, $method);
+        return $request->execute();
     }
 
-    public function ConfirmVerificationCode($url, $code){
-      $request = new Challenge_confirm_code($this, $url, $code);
-      return $request->execute();
+    public function ConfirmVerificationCode($url, $code)
+    {
+        $request = new Challenge_confirm_code($this, $url, $code);
+        return $request->execute();
     }
 
-    public function SendVerificationCodeAgain($url, $replay){
-      $request = new Challenge_sendcode_again($this, $url, $replay);
-      return $request->execute();
+    public function SendVerificationCodeAgain($url, $replay)
+    {
+        $request = new Challenge_sendcode_again($this, $url, $replay);
+        return $request->execute();
     }
 
 
-    public function GetSession($url){
-      $request = new SaveSession($this, $url);
-      return $request->execute();
+    public function GetSession($url)
+    {
+        $request = new SaveSession($this, $url);
+        return $request->execute();
     }
 
 }
