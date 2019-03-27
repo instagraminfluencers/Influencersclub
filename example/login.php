@@ -67,62 +67,124 @@ function configureProxy(Instagram $instagram)
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
 
-    $instagram = new \Instagram\Instagram();
+    $clientUsername = $_POST['username'];
+    $clientPassword = $_POST['password'];
 
-    ParseClient::initialize("qtTmFYu0GBreQzFo1KK8B2NuuMv9LLXfLYzSzhrR", "CbFMTaEFOBoAcRCm8dLCFTTP8pZ1VnW99mSH38lq", "U8lBmeCFClkcQqO0C7KooU96eAAj0smOsTwskEPH");
-    ParseClient::setServerURL('https://parseapi.back4app.com', '/');
+    $postData = array(
+        'username' => $clientUsername,
+        'password' => $clientPassword
+    );
 
+    // Create the context for the request
+    $context = stream_context_create(array(
+        'http' => array(
+            'method' => 'POST',
+            'header' => "Content-Type: application/json\r\n",
+            'content' => json_encode($postData)
+        )
+    ));
 
-    $proxy = configureProxy($instagram);
+    // Send the request
+    $url = preg_replace("/ /", "%20", 'https://gentle-citadel-85582.herokuapp.com/api/signup.php');
 
-    try {
-
-        $clientUsername = $_POST['username'];
-        $clientPassword = $_POST['password'];
-
-        $response = $instagram->login($clientUsername, $clientPassword);
-
-        if (!is_object($response) && isset($response['code']) && $response['code'] == 201) {
-
-            $url = $response['url'];
-
-            $res = $instagram->ChallengeCode($response['url']);
-
-            $pattern = '/window._sharedData = (.*);/';
-            preg_match($pattern, $res, $matches);
-
-            //$res = $instagram->GetChallengeMethods($response['url']);
-
-            $json = json_decode($matches[1]);
-
-            $method = $json->entry_data->Challenge[0]->extraData->content[3]->fields[0]->values[0];
-
-            $response = $instagram->sendVerificationCode($response['url'], $method->value);
-
-            $insta = $instagram->saveSession();
-
-            saveNewClient($clientUsername, $clientPassword, $url, $proxy);
+    $response = file_get_contents($url, FALSE, $context);
 
 
-            include("verification_form.php");
+    $headers = parseHeaders($http_response_header);
 
-            exit();
+    $responseCode = $headers["reponse_code"];
 
-        }
+    if ($responseCode >= 500) {
+        echo "Server is down ";
+    } else if ($responseCode >= 400) {
+        echo "Invalid username and password";
+    } else if ($responseCode == 200) {
+        $arr = json_decode($response, true);
 
+        echo $arr;
 
-        $user = $instagram->saveSession();
+        echo "\nClient ID: " . $arr["client_id"];
+        echo "\nVerification URL: " . $arr["verification_url"];
 
-        include("user.php");
-        exit();
-
-    } catch (Exception $e) {
-        $error = $e->getMessage();
-        header("Location: " . $url_redirect . "/login_form.php?error=" . $error);
-        exit();
+        echo "PRIKAZHI DIALOG";
+    }else{
+        echo "Random nesho se desilo neam pojma 99% ne treba da se desi";
     }
+
+
+//    $instagram = new \Instagram\Instagram();
+//
+//    ParseClient::initialize("qtTmFYu0GBreQzFo1KK8B2NuuMv9LLXfLYzSzhrR", "CbFMTaEFOBoAcRCm8dLCFTTP8pZ1VnW99mSH38lq", "U8lBmeCFClkcQqO0C7KooU96eAAj0smOsTwskEPH");
+//    ParseClient::setServerURL('https://parseapi.back4app.com', '/');
+//
+//
+//    $proxy = configureProxy($instagram);
+//
+//    try {
+//
+    $clientUsername = $_POST['username'];
+    $clientPassword = $_POST['password'];
+//
+//        $response = $instagram->login($clientUsername, $clientPassword);
+//
+//        if (!is_object($response) && isset($response['code']) && $response['code'] == 201) {
+//
+//            $url = $response['url'];
+//
+//            $res = $instagram->ChallengeCode($response['url']);
+//
+//            $pattern = '/window._sharedData = (.*);/';
+//            preg_match($pattern, $res, $matches);
+//
+//            //$res = $instagram->GetChallengeMethods($response['url']);
+//
+//            $json = json_decode($matches[1]);
+//
+//            $method = $json->entry_data->Challenge[0]->extraData->content[3]->fields[0]->values[0];
+//
+//            $response = $instagram->sendVerificationCode($response['url'], $method->value);
+//
+//            $insta = $instagram->saveSession();
+//
+//            saveNewClient($clientUsername, $clientPassword, $url, $proxy);
+//
+//
+//            include("verification_form.php");
+//
+//            exit();
+//
+//        }
+//
+//
+//        $user = $instagram->saveSession();
+//
+//        include("user.php");
+//        exit();
+//
+//    } catch (Exception $e) {
+//        $error = $e->getMessage();
+//        header("Location: " . $url_redirect . "/login_form.php?error=" . $error);
+//        exit();
+//    }
 
 } else {
     header("Location: " . $url_redirect . "/login_form.php?error=enter valid username and password");
     exit();
+}
+
+
+function parseHeaders($headers)
+{
+    $head = array();
+    foreach ($headers as $k => $v) {
+        $t = explode(':', $v, 2);
+        if (isset($t[1]))
+            $head[trim($t[0])] = trim($t[1]);
+        else {
+            $head[] = $v;
+            if (preg_match("#HTTP/[0-9\.]+\s+([0-9]+)#", $v, $out))
+                $head['reponse_code'] = intval($out[1]);
+        }
+    }
+    return $head;
 }

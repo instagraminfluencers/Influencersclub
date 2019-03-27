@@ -1,1 +1,26 @@
-web: vendor/bin/heroku-php-nginx example/
+    <string name="error_select_person_making_sell">Please select the person making the sell</string>
+    <string name="error_select_customer_email">Please select customer Email</string>
+    <string name="error_invalid_email">Email is not valid format</string>
+    <string name="error_select_customer_phone">Please select customer Phone</string>
+    <string name="error_select_customer_address">Please select customer Address</string>
+    <string name="error_customer_city">Please select customer City</string>
+    <string name="error_select_skin_values">Please select value for Skin Damage</string>
+    <string name="error_select_value_for_redness">Please select value for Redness</string>
+    <string name="error_select_value_for_Scars">Please select value for Scars</string>
+    <string name="error_select_value_wrinkles">Please select value for Wrinkles</string>
+    <string name="error_pigmentation">Please select value for pigmentation</string>
+    <string name="error_skin_clean">Please select value for Skin Clean</string>
+    <string name="error_sun_exposed_daily">Please choose if the customer is exposed to sun daily?</string>
+    <string name="error_customer_have_acne">Please choose if the customer have acne?</string>
+    <string name="error_acne_thickness">Please choose acne thickness</string>
+    <string name="error_customer_have_spots">Please choose if the customer have spots?</string>
+    <string name="error_pigmentation_thickness">Please choose pigmentation thickness</string>
+    <string name="error_wrinkles">Please choose if the customer have Wrinkles</string>
+    <string name="error_wrinkles_thickness">Please choose Wrinkles thickness</string>
+    <string name="review_all_your_treatments">Review all your treatments</string>
+    <string name="review_your_items_and_checkout">Review your items and checkout</string>
+    <string name="purchase_summary">Purchase Summary</string>
+    <string name="there_are_3_items_in_your_purchase_summary">There are %d items in your purchase summary</string>
+    <string name="review_products">Review Products</string>
+    <string name="no_products_for_review">There are no selected products available for Review</string>
+    <string name="submit">Submit</string>
